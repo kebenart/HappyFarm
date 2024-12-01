@@ -394,18 +394,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv4g5"]
+size = Vector2(8, 6)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -8)
+collision_layer = 2
 script = ExtResource("1_75meo")
 current_tool = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kchu3")
-animation = &"chopping_down"
+animation = &"idle_down"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_gv4g5")
 
 [node name="StateMatchine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]

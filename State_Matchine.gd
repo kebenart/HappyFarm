@@ -38,12 +38,12 @@ func _physics_process(delta: float) -> void:
 
 
 func transition_to(node_state_name : String) -> void:
-	print("current:"+current_node_state.name+", new:"+node_state_name)
+	#print("current:"+current_node_state.name+", new:"+node_state_name)
 	if node_state_name.to_lower() == current_node_state.name.to_lower():
 		return
 	
 	var new_node_state = node_states.get(node_state_name.to_lower())
-	print("获取档期: "+str(new_node_state))
+	#print("获取档期: "+str(new_node_state))
 	if !new_node_state:
 		return
 	

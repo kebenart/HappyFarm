@@ -21,5 +21,9 @@ tile_set = ExtResource("1_b6wk4")
 tile_map_data = PackedByteArray("AAAKAAgABAAAAAAAAAALAAgABAABAAAAAAALAAkABAABAAIAAAAMAAkABAABAAIAAAAKAAkABAAAAAIAAAANAAkABAACAAIAAAANAAgABAACAAAAAAAMAAgABAABAAAAAAAKAAsABAAAAAAAAAALAAsABAABAAAAAAAMAAsABAABAAAAAAAMAAwABAABAAIAAAALAAwABAABAAIAAAAKAAwABAAAAAIAAAANAAwABAACAAIAAAANAAsABAACAAAAAAA=")
 tile_set = ExtResource("1_b6wk4")
 
+[node name="HouseLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAfAAUAAwAAAAAAAQA=")
+tile_set = ExtResource("1_b6wk4")
+
 [node name="Player" parent="." instance=ExtResource("2_y88jh")]
 position = Vector2(323, 195)
