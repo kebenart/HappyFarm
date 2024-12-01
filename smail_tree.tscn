@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://clu45qh1a6qmc"]
+
+[ext_resource type="Texture2D" uid="uid://bh62vi0cebwyk" path="res://assets/Basic_Grass_Biom_things.png" id="1_55e7o"]
+[ext_resource type="PackedScene" uid="uid://cstuk56ut3t6m" path="res://hurt_component.tscn" id="2_kuo0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2id8a"]
+atlas = ExtResource("1_55e7o")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khnqi"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwae1"]
+size = Vector2(10, 22)
+
+[node name="SmailTree" type="Sprite2D"]
+position = Vector2(0, -9)
+texture = SubResource("AtlasTexture_2id8a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_khnqi")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_kuo0x")]
+position = Vector2(0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_xwae1")
+debug_color = Color(0.896389, 0.0511424, 0.75816, 0.42)

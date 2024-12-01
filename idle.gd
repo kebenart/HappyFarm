@@ -26,15 +26,16 @@ func _on_next_transitions()->void:
 	if GameInputEvents.is_movement_input():
 		transition.emit("Walk")
 
-	if player.current_tool==DataTypes.Tools.HOE \
+	print(str(player.current_tool))
+	if player.current_tool == DataTypes.Tools.HOE \
 	and Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
 		transition.emit("Hoe")
 		
-	if player.current_tool==DataTypes.Tools.CHOPPING \
+	if player.current_tool == DataTypes.Tools.CHOPPING \
 	and Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
 		transition.emit("chopping")
 	
-	if player.current_tool==DataTypes.Tools.WATER \
+	if player.current_tool == DataTypes.Tools.WATER \
 	and Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
 		transition.emit("water")
 
