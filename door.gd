@@ -17,11 +17,9 @@ func _open(body:Node2D):
 	#collision_shape_2d.disabled = true
 	#set_collision_mask_value(2,false)
 	set_collision_layer_value(3,false)
-	print("开门")
 	
 func _close(body:Node2D):
 	door_animation_player.play("close")
-	print("关门")
 	#collision_shape_2d.disabled = false
 	#set_collision_mask_value(2,true)
 	set_collision_layer_value(3,true)

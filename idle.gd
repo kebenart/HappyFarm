@@ -1,3 +1,4 @@
+class_name Idle
 extends NodeState
 
 @export var player:Player
@@ -26,7 +27,7 @@ func _on_next_transitions()->void:
 	if GameInputEvents.is_movement_input():
 		transition.emit("Walk")
 
-	print(str(player.current_tool))
+	#print(str(player.current_tool))
 	if player.current_tool == DataTypes.Tools.HOE \
 	and Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
 		transition.emit("Hoe")

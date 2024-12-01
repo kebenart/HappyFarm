@@ -1,4 +1,4 @@
-
+class_name Water
 extends NodeState
 
 @export var player:Player

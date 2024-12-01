@@ -1,4 +1,4 @@
-
+class_name Walk
 extends NodeState
 
 @export var player:Player

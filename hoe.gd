@@ -1,4 +1,4 @@
-
+class_name Hoe
 extends NodeState
 
 @export var player:Player

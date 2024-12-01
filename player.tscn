@@ -408,8 +408,10 @@ current_tool = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kchu3")
-animation = &"chopping_right"
+animation = &"idle_down"
 autoplay = "idle_down"
+frame = 1
+frame_progress = 0.641861
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -446,10 +448,13 @@ player = NodePath("../..")
 animatedPlayer = NodePath("../../AnimatedSprite2D")
 
 [node name="HitComponent" parent="." instance=ExtResource("10_a2fyw")]
-position = Vector2(0, -22)
+position = Vector2(0, 0)
 current_tool = 2
 
 [node name="HitComponentCollisionShare" type="CollisionShape2D" parent="HitComponent"]
-position = Vector2(3, 10)
+position = Vector2(-9, 7)
+rotation = -0.0175425
 shape = SubResource("CircleShape2D_s3n68")
 debug_color = Color(0.744327, 0.272116, 0.925695, 0.42)
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

@@ -3,6 +3,10 @@ extends Node
 
 signal transition
 
+# 当前是否正在激活工具(正在使用)
+var activated:bool = false
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_process(delta: float) -> void:
 	pass

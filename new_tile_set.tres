@@ -1,10 +1,13 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://bdsii6fmypkx6"]
+[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://bdsii6fmypkx6"]
 
 [ext_resource type="Texture2D" uid="uid://bny0dhuxiqiuk" path="res://assets/Water.png" id="1_up0jb"]
 [ext_resource type="Texture2D" uid="uid://bmbqlgqqmokrw" path="res://assets/Grass.png" id="2_emo5a"]
 [ext_resource type="Texture2D" uid="uid://bh62vi0cebwyk" path="res://assets/Basic_Grass_Biom_things.png" id="3_m7kh2"]
 [ext_resource type="PackedScene" uid="uid://b0aiqmg341a8k" path="res://house.tscn" id="4_5l1o6"]
 [ext_resource type="Texture2D" uid="uid://dubfj0iy4cvo" path="res://assets/Tilled_Dirt_Wide_v2.png" id="4_783u4"]
+[ext_resource type="PackedScene" uid="uid://clu45qh1a6qmc" path="res://smail_tree.tscn" id="6_4dycu"]
+[ext_resource type="PackedScene" uid="uid://dfm8vf74b0uf1" path="res://large_tree.tscn" id="7_0c3wy"]
+[ext_resource type="PackedScene" uid="uid://5wt8nwk7jji2" path="res://stone.tscn" id="8_sr8qa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hbum"]
 texture = ExtResource("1_up0jb")
@@ -521,8 +524,12 @@ texture = ExtResource("3_m7kh2")
 3:0/size_in_atlas = Vector2i(2, 2)
 3:0/0 = 0
 3:0/0/texture_origin = Vector2i(0, 8)
+3:0/0/y_sort_origin = 4
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.875, 6.125, -4, 6.25, -4.125, -0.5, 3.5, -0.25)
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.625, -6, 4.625, -5.75, 6.875, -0.25, 4.125, 4.25, -1.125, 3.875, -0.625, 6.25, -3.5, 5.875, -6.375, 0.875)
 6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.375, -4, 3.75, -4, 6.375, 1.25, 2.875, 6.375, -1.25, 6, -4.625, 1.5)
 6:1/0 = 0
 5:1/0 = 0
 7:1/0 = 0
@@ -957,6 +964,15 @@ texture = ExtResource("4_783u4")
 8:3/0/terrains_peering_bit/right_side = 1
 8:3/0/terrains_peering_bit/top_side = 1
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k775v"]
+resource_name = "Tree"
+scenes/1/scene = ExtResource("6_4dycu")
+scenes/2/scene = ExtResource("7_0c3wy")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_c74ly"]
+resource_name = "Stone"
+scenes/1/scene = ExtResource("8_sr8qa")
+
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
@@ -970,3 +986,5 @@ sources/1 = SubResource("TileSetAtlasSource_p8gwt")
 sources/2 = SubResource("TileSetAtlasSource_b12x5")
 sources/4 = SubResource("TileSetAtlasSource_7h0s7")
 sources/3 = SubResource("TileSetScenesCollectionSource_swrpq")
+sources/5 = SubResource("TileSetScenesCollectionSource_k775v")
+sources/6 = SubResource("TileSetScenesCollectionSource_c74ly")
