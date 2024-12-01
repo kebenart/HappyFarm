@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=4 uid="uid://bwgy3fsd4cer6"]
+[gd_scene load_steps=6 format=4 uid="uid://bwgy3fsd4cer6"]
 
 [ext_resource type="TileSet" uid="uid://bdsii6fmypkx6" path="res://new_tile_set.tres" id="1_e5qmn"]
+[ext_resource type="PackedScene" uid="uid://clu45qh1a6qmc" path="res://smail_tree.tscn" id="2_u3hx5"]
 [ext_resource type="PackedScene" uid="uid://cwplsfvo02rvm" path="res://player.tscn" id="2_y88jh"]
+[ext_resource type="Shader" path="res://smail_tree.gdshader" id="3_fdamu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydjwj"]
+resource_local_to_scene = true
+shader = ExtResource("3_fdamu")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
@@ -43,6 +51,10 @@ tile_set = ExtResource("1_e5qmn")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAgAAYAAgADAAAAAAAOAAsAAgAGAAMAAAAOAAwAAgADAAMAAAAOABAAAgACAAMAAAAVAA4AAgAHAAIAAAAYAAoAAgAFAAMAAAAYAAsAAgAFAAEAAAAdAAsAAgACAAMAAAASAAkAAgAFAAIAAAAjAAcAAgACAAMAAAAjAAkAAgAGAAMAAAAlAAkAAgAHAAAAAAAEAAoAAgADAAIAAAAUAAgAAgAHAAIAAAALAAUAAgAGAAEAAAAMAAcAAgAAAAMAAAAbAA4AAgAGAAEAAAAbABEAAgAHAAAAAAAbABIAAgAGAAMAAAAcAA8AAgADAAMAAAAgABAAAgADAAIAAAADAAwAAgABAAMAAAAYABAAAgABAAMAAAAEAAgAAgAAAAMAAAAkAAwAAgAAAAMAAAAfABIAAgAAAAMAAAAfAAwAAgAIAAIAAAA=")
 tile_set = ExtResource("1_e5qmn")
+
+[node name="SmailTree" parent="Node2D" instance=ExtResource("2_u3hx5")]
+material = SubResource("ShaderMaterial_ydjwj")
+position = Vector2(360, 194)
 
 [node name="Player" parent="." instance=ExtResource("2_y88jh")]
 position = Vector2(323, 195)

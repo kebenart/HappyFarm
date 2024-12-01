@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://clu45qh1a6qmc"]
+[gd_scene load_steps=12 format=3 uid="uid://clu45qh1a6qmc"]
 
 [ext_resource type="Texture2D" uid="uid://bh62vi0cebwyk" path="res://assets/Basic_Grass_Biom_things.png" id="1_55e7o"]
 [ext_resource type="Shader" path="res://smail_tree.gdshader" id="1_cbk5q"]
 [ext_resource type="Script" path="res://smail_tree.gd" id="2_iw07x"]
 [ext_resource type="PackedScene" uid="uid://cstuk56ut3t6m" path="res://hurt_component.tscn" id="2_kuo0x"]
 [ext_resource type="PackedScene" uid="uid://d2cngatceggne" path="res://damage_component.tscn" id="3_ytmsx"]
+[ext_resource type="PackedScene" uid="uid://deqf2wxh6xk5c" path="res://transparent_component.tscn" id="6_d1wyv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wh11v"]
 resource_local_to_scene = true
@@ -21,6 +22,9 @@ radius = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54vt4"]
 size = Vector2(8, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtby8"]
+size = Vector2(14, 25)
 
 [node name="SmailTree" type="Sprite2D"]
 material = SubResource("ShaderMaterial_wh11v")
@@ -46,3 +50,10 @@ debug_color = Color(0.896389, 0.0511424, 0.75816, 0.42)
 
 [node name="DamageComponent" parent="." instance=ExtResource("3_ytmsx")]
 position = Vector2(0, 9)
+
+[node name="TransparentComponent" parent="." instance=ExtResource("6_d1wyv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransparentComponent"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_mtby8")
+debug_color = Color(0.405104, 0.607672, 0, 0.42)
