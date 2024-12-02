@@ -1,0 +1,2 @@
+class_name Chicken
+extends CharacterBody2D
