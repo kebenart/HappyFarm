@@ -5,9 +5,8 @@ extends CharacterBody2D
 var direction:Vector2
 
 @export var current_tool:DataTypes.Tools
-
-@onready var state_matchine: StateMatchine = $StateMatchine
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var state_matchine: StateMatchine = $StateMatchine
 
 
 # 动画帧率变化

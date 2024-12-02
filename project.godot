@@ -28,15 +28,22 @@ window/stretch/scale_mode="integer"
 
 project/assembly_name="HappyFarm"
 
+[global_group]
+
+navigation_polygon_source_geometry_group=""
+navigation_chicken_group=""
+
 [layer_names]
 
 2d_physics/layer_1="Ground"
 2d_navigation/layer_1="chickens"
 2d_physics/layer_2="Player"
+2d_navigation/layer_2="cows"
 2d_physics/layer_3="Interactable"
 2d_physics/layer_4="Tool"
 2d_physics/layer_5=" Object"
 2d_physics/layer_6="Collectable"
+2d_physics/layer_7="NPC"
 
 [rendering]
 

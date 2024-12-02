@@ -7,8 +7,8 @@
 atlas = ExtResource("1_n13mc")
 region = Rect2(80, 32, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4gj4"]
-size = Vector2(8, 7)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15vou"]
+size = Vector2(15, 8)
 
 [node name="Log" type="Sprite2D"]
 texture = SubResource("AtlasTexture_xwbdu")
@@ -17,5 +17,5 @@ texture = SubResource("AtlasTexture_xwbdu")
 collectable_name = "log"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_f4gj4")
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_15vou")

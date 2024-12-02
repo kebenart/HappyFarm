@@ -11,8 +11,8 @@
 atlas = ExtResource("1_re46f")
 region = Rect2(16, 0, 32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnr1i"]
-size = Vector2(21, 23)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjcrr"]
+size = Vector2(23.5, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpvoy"]
 size = Vector2(8, 3)
@@ -33,8 +33,8 @@ script = ExtResource("2_ya6tl")
 [node name="TransparentComponent" parent="." instance=ExtResource("4_l33w2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransparentComponent"]
-position = Vector2(1, -3)
-shape = SubResource("RectangleShape2D_rnr1i")
+position = Vector2(-0.25, -3)
+shape = SubResource("RectangleShape2D_mjcrr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TransparentComponent"]
 position = Vector2(0, 9.5)

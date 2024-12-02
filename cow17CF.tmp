@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpesntnd87bqa"]
+
+[ext_resource type="Texture2D" uid="uid://bb6delku2o3cq" path="res://assets/Cow.png" id="1_84naj"]
+[ext_resource type="Script" path="res://cow_idle_state.gd" id="3_62xkc"]
+[ext_resource type="Script" path="res://cow_walk_state.gd" id="4_cd4pe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imf4l"]
+atlas = ExtResource("1_84naj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hi75"]
+atlas = ExtResource("1_84naj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oye0x"]
+atlas = ExtResource("1_84naj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_not0w"]
+atlas = ExtResource("1_84naj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8270c"]
+atlas = ExtResource("1_84naj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_doqyr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imf4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hi75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oye0x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_not0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8270c")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7r0q"]
+size = Vector2(21.375, 13.5)
+
+[node name="Cow" type="CharacterBody2D"]
+metadata/_edit_vertical_guides_ = [-10.0, 12.0]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_doqyr")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.188516
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.3125, -7)
+shape = SubResource("RectangleShape2D_a7r0q")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 2
+avoidance_enabled = true
+
+[node name="StateMatchine" type="Node2D" parent="."]
+
+[node name="Idle" type="Node2D" parent="StateMatchine"]
+script = ExtResource("3_62xkc")
+
+[node name="Walk" type="Node2D" parent="StateMatchine"]
+script = ExtResource("4_cd4pe")
