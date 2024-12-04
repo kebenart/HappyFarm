@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://bfc3ut5bsk2wf"]
+[gd_scene load_steps=6 format=4 uid="uid://cymy77o4go1v2"]
 
 [ext_resource type="TileSet" uid="uid://bdsii6fmypkx6" path="res://new_tile_set.tres" id="1_wnwm2"]
-[ext_resource type="PackedScene" uid="uid://cpesntnd87bqa" path="res://cow.tscn" id="2_reujt"]
+[ext_resource type="PackedScene" path="res://cow.tscn" id="2_reujt"]
 [ext_resource type="PackedScene" uid="uid://bv1ilfg6pggsq" path="res://chicken.tscn" id="3_u0yri"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a407t"]

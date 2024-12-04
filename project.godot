@@ -15,6 +15,10 @@ run/main_scene="res://map.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ToolManager="*res://ToolManager.gd"
+
 [display]
 
 window/size/viewport_width=640
@@ -32,6 +36,19 @@ project/assembly_name="HappyFarm"
 
 navigation_polygon_source_geometry_group=""
 navigation_chicken_group=""
+
+[input]
+
+release_tool={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(471, 47),"global_position":Vector2(490, 138),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+Hit={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(380, 49),"global_position":Vector2(399, 140),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [layer_names]
 

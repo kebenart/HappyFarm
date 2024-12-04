@@ -408,10 +408,8 @@ current_tool = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kchu3")
-animation = &"idle_down"
+animation = &"hoe_down"
 autoplay = "idle_down"
-frame = 1
-frame_progress = 0.641861
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
