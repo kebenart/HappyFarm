@@ -447,7 +447,6 @@ animatedPlayer = NodePath("../../AnimatedSprite2D")
 
 [node name="HitComponent" parent="." instance=ExtResource("10_a2fyw")]
 position = Vector2(0, 0)
-current_tool = 2
 
 [node name="HitComponentCollisionShare" type="CollisionShape2D" parent="HitComponent"]
 position = Vector2(-9, 7)
