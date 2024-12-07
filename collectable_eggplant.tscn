@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnu5nymggc401"]
+
+[ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="1_dgsex"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oykxt"]
+load_path = "res://.godot/imported/Basic_Plants.png-ab8188bcdc957de8973fd0a29c1aae7e.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4cf4"]
+radius = 7.22268
+
+[node name="collectable_eggplant" type="Sprite2D"]
+position = Vector2(0, -6)
+scale = Vector2(0.998854, 1.0764)
+texture = SubResource("CompressedTexture2D_oykxt")
+region_enabled = true
+region_rect = Rect2(80, 16, 16, 16)
+
+[node name="CollectableComponent" parent="." instance=ExtResource("1_dgsex")]
+collectable_name = "eggplant"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+position = Vector2(0, -1.19209e-07)
+scale = Vector2(1, 0.999999)
+shape = SubResource("CircleShape2D_w4cf4")

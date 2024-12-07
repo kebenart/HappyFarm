@@ -12,12 +12,12 @@ size = Vector2(8, 7)
 
 [node name="CollectableStone" type="Sprite2D"]
 position = Vector2(1, 0)
+scale = Vector2(1.59055, 1.59055)
 texture = SubResource("AtlasTexture_rvcf5")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_rkpds")]
-position = Vector2(-1, 0)
-collectable_name = "log"
+collectable_name = "stone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
-position = Vector2(0, -2.5)
+position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_f4gj4")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6fd3jk3vd7t7"]
+
+[ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_2n6cs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p63kc"]
+load_path = "res://.godot/imported/Egg_item.png-8d6f7abd822008d46e906eee682433e1.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dc2n6"]
+radius = 7.56637
+
+[node name="collectable_egg" type="Sprite2D"]
+position = Vector2(0, -7)
+scale = Vector2(0.950917, 1.02474)
+texture = SubResource("CompressedTexture2D_p63kc")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_2n6cs")]
+collectable_name = "egg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+position = Vector2(-0.5, 0)
+shape = SubResource("CircleShape2D_dc2n6")

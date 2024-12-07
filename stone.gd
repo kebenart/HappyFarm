@@ -23,6 +23,8 @@ func _on_dead()->void:
 	queue_free()
 	
 func add_collectable_stone_scene() -> void:
+	print("添加可收集石头")
 	var stone_instance = stone_scene.instantiate() as Node2D
-	stone_instance.global_position = Vector2(global_position.x,global_position.y)
+	stone_instance.global_position = Vector2(global_position.x,global_position.y+4)
+	
 	get_parent().add_child(stone_instance)

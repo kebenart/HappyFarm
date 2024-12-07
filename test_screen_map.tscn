@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=4 uid="uid://buk7rbqnwbfch"]
+[gd_scene load_steps=13 format=4 uid="uid://buk7rbqnwbfch"]
 
 [ext_resource type="PackedScene" uid="uid://cresmkx45g5cw" path="res://game_screen.tscn" id="1_ysejn"]
 [ext_resource type="TileSet" uid="uid://bdsii6fmypkx6" path="res://new_tile_set.tres" id="2_dnlyt"]
 [ext_resource type="PackedScene" uid="uid://clu45qh1a6qmc" path="res://smail_tree.tscn" id="3_631wd"]
 [ext_resource type="Shader" path="res://smail_tree.gdshader" id="4_7vhe7"]
 [ext_resource type="PackedScene" uid="uid://cwplsfvo02rvm" path="res://player.tscn" id="5_jpx3c"]
+[ext_resource type="PackedScene" uid="uid://c6fd3jk3vd7t7" path="res://collectable_egg.tscn" id="6_dw48y"]
+[ext_resource type="PackedScene" uid="uid://bnu5nymggc401" path="res://collectable_eggplant.tscn" id="7_2mvwq"]
+[ext_resource type="PackedScene" uid="uid://bh6y8lxw3wrdy" path="res://collectable_log.tscn" id="8_cyngy"]
+[ext_resource type="PackedScene" uid="uid://3dhlvo5povvi" path="res://collectable_milk.tscn" id="9_68slk"]
+[ext_resource type="PackedScene" uid="uid://cwmijivfpjnx2" path="res://collectable_stone.tscn" id="10_7730f"]
+[ext_resource type="PackedScene" uid="uid://bds3hxd1nr5fa" path="res://collectable_wheat.tscn" id="11_tccg7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n48m3"]
 resource_local_to_scene = true
@@ -61,3 +67,25 @@ position = Vector2(360, 194)
 
 [node name="Player" parent="." instance=ExtResource("5_jpx3c")]
 position = Vector2(323, 195)
+current_tool = 0
+
+[node name="collectable_egg" parent="." instance=ExtResource("6_dw48y")]
+position = Vector2(355, 223)
+
+[node name="collectable_eggplant" parent="." instance=ExtResource("7_2mvwq")]
+position = Vector2(378, 222)
+
+[node name="collectable_log" parent="." instance=ExtResource("8_cyngy")]
+position = Vector2(354, 251)
+
+[node name="collectable_milk" parent="." instance=ExtResource("9_68slk")]
+position = Vector2(383, 244)
+
+[node name="CollectableStone" parent="." instance=ExtResource("10_7730f")]
+position = Vector2(426, 243)
+
+[node name="collectable_wheat" parent="." instance=ExtResource("11_tccg7")]
+position = Vector2(415, 272)
+
+[node name="collectable_wheat2" parent="." instance=ExtResource("11_tccg7")]
+position = Vector2(409, 250)

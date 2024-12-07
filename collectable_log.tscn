@@ -1,19 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh6y8lxw3wrdy"]
 
-[ext_resource type="Texture2D" uid="uid://bh62vi0cebwyk" path="res://assets/Basic_Grass_Biom_things.png" id="1_n13mc"]
-[ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_471uy"]
+[ext_resource type="Texture2D" uid="uid://bh62vi0cebwyk" path="res://assets/Basic_Grass_Biom_things.png" id="1_88mg4"]
+[ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_2jm57"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwbdu"]
-atlas = ExtResource("1_n13mc")
+atlas = ExtResource("1_88mg4")
 region = Rect2(80, 32, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15vou"]
 size = Vector2(15, 8)
 
-[node name="Log" type="Sprite2D"]
+[node name="collectable_log" type="Sprite2D"]
+position = Vector2(0, -3)
+scale = Vector2(0.82667, 0.829402)
 texture = SubResource("AtlasTexture_xwbdu")
 
-[node name="CollectableComponent" parent="." instance=ExtResource("2_471uy")]
+[node name="CollectableComponent" parent="." instance=ExtResource("2_2jm57")]
 collectable_name = "log"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
