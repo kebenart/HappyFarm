@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bds3hxd1nr5fa"]
+[gd_scene load_steps=6 format=3 uid="uid://bds3hxd1nr5fa"]
 
-[ext_resource type="Texture2D" uid="uid://cqwpgtb08j5na" path="res://assets/ui/Basic_Plants.png" id="1_74tlc"]
+[ext_resource type="Texture2D" uid="uid://df7xlbr66dbi1" path="res://assets/ui/whate_item.png" id="1_mt17w"]
+[ext_resource type="Material" uid="uid://b4e4xtlascwwy" path="res://float_shadow.tres" id="1_n8csx"]
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_w8ub4"]
+[ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="4_t4i1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm3xv"]
 size = Vector2(13.3168, 15.0802)
 
 [node name="collectable_wheat" type="Sprite2D"]
-position = Vector2(0, -7)
+material = ExtResource("1_n8csx")
+position = Vector2(0, -8)
 scale = Vector2(0.846939, 0.912694)
-texture = ExtResource("1_74tlc")
+texture = ExtResource("1_mt17w")
 region_enabled = true
-region_rect = Rect2(80, 0, 16, 16)
+region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_w8ub4")]
 collectable_name = "wheat"
@@ -20,3 +23,6 @@ collectable_name = "wheat"
 position = Vector2(-5.96046e-08, -1.78814e-07)
 scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_qm3xv")
+
+[node name="FloatShadow" parent="." node_paths=PackedStringArray("sprite2D") instance=ExtResource("4_t4i1k")]
+sprite2D = NodePath("..")

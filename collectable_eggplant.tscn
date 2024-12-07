@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnu5nymggc401"]
+[gd_scene load_steps=6 format=3 uid="uid://bnu5nymggc401"]
 
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="1_dgsex"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oykxt"]
-load_path = "res://.godot/imported/Basic_Plants.png-ab8188bcdc957de8973fd0a29c1aae7e.ctex"
+[ext_resource type="Material" uid="uid://b4e4xtlascwwy" path="res://float_shadow.tres" id="1_k7c50"]
+[ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="1_qe5rn"]
+[ext_resource type="Texture2D" uid="uid://b5q2apo4nex72" path="res://assets/ui/eggplant_item.png" id="2_f1jiy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w4cf4"]
 radius = 7.22268
 
 [node name="collectable_eggplant" type="Sprite2D"]
-position = Vector2(0, -6)
+texture_filter = 1
+material = ExtResource("1_k7c50")
+position = Vector2(57, 41)
 scale = Vector2(0.998854, 1.0764)
-texture = SubResource("CompressedTexture2D_oykxt")
+texture = ExtResource("2_f1jiy")
 region_enabled = true
-region_rect = Rect2(80, 16, 16, 16)
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="FloatShadow" parent="." node_paths=PackedStringArray("sprite2D") instance=ExtResource("1_qe5rn")]
+sprite2D = NodePath("..")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("1_dgsex")]
 collectable_name = "eggplant"

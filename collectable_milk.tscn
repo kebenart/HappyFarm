@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://3dhlvo5povvi"]
+[gd_scene load_steps=6 format=3 uid="uid://3dhlvo5povvi"]
 
-[ext_resource type="Texture2D" uid="uid://h5ngoxkyym0n" path="res://assets/Simple_Milk_and_grass_item.png" id="1_josef"]
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_bsvyv"]
+[ext_resource type="Texture2D" uid="uid://bcnr2f575a1rh" path="res://assets/ui/milk_item.png" id="2_ile8g"]
+[ext_resource type="Material" uid="uid://b4e4xtlascwwy" path="res://float_shadow.tres" id="3_b253u"]
+[ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="4_1g6dh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm3xv"]
 size = Vector2(13.8811, 14.2425)
 
 [node name="collectable_milk" type="Sprite2D"]
+material = ExtResource("3_b253u")
 position = Vector2(0, -7)
 scale = Vector2(0.847672, 0.913484)
-texture = ExtResource("1_josef")
+texture = ExtResource("2_ile8g")
 region_enabled = true
-region_rect = Rect2(32, 0, 16, 16)
+region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_bsvyv")]
 collectable_name = "milk"
@@ -20,3 +23,6 @@ collectable_name = "milk"
 position = Vector2(0, -0.157086)
 scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_qm3xv")
+
+[node name="FloatShadow" parent="." node_paths=PackedStringArray("sprite2D") instance=ExtResource("4_1g6dh")]
+sprite2D = NodePath("..")

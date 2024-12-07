@@ -1,6 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6fd3jk3vd7t7"]
+[gd_scene load_steps=7 format=3 uid="uid://c6fd3jk3vd7t7"]
 
+[ext_resource type="Shader" path="res://shadow.gdshader" id="1_eca6i"]
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_2n6cs"]
+[ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="4_u00mg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vbvas"]
+shader = ExtResource("1_eca6i")
+shader_parameter/debug = false
+shader_parameter/border_scale = 2.0
+shader_parameter/shadow_offset = Vector2(0, -8)
+shader_parameter/color = Color(0.415686, 0.447059, 0.486275, 0.298039)
+shader_parameter/blur_amount = 1.26
+shader_parameter/shadow_scale = 2.0
+shader_parameter/disable_rotating = false
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p63kc"]
 load_path = "res://.godot/imported/Egg_item.png-8d6f7abd822008d46e906eee682433e1.ctex"
@@ -9,7 +21,8 @@ load_path = "res://.godot/imported/Egg_item.png-8d6f7abd822008d46e906eee682433e1
 radius = 7.56637
 
 [node name="collectable_egg" type="Sprite2D"]
-position = Vector2(0, -7)
+material = SubResource("ShaderMaterial_vbvas")
+position = Vector2(0, -8)
 scale = Vector2(0.950917, 1.02474)
 texture = SubResource("CompressedTexture2D_p63kc")
 
@@ -19,3 +32,6 @@ collectable_name = "egg"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 position = Vector2(-0.5, 0)
 shape = SubResource("CircleShape2D_dc2n6")
+
+[node name="FloatShadow" parent="." node_paths=PackedStringArray("sprite2D") instance=ExtResource("4_u00mg")]
+sprite2D = NodePath("..")
