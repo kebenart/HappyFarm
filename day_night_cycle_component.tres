@@ -1,0 +1,9 @@
+[gd_resource type="GradientTexture2D" load_steps=2 format=3 uid="uid://dkgioplhqoqvj"]
+
+[sub_resource type="Gradient" id="Gradient_i31ut"]
+offsets = PackedFloat32Array(0, 0.0445956, 0.131519, 0.195011, 0.250945, 0.31746, 0.389267, 0.484505, 0.999244)
+colors = PackedColorArray(0.0101599, 0.164818, 0.259143, 1, 0.0101599, 0.164818, 0.259143, 1, 0.0278176, 0.273687, 0.792322, 1, 0.289865, 0.440455, 0.846534, 1, 0.406725, 0.364802, 0.929181, 1, 0.987257, 0.721052, 0.379566, 1, 0.993638, 0.775089, 0.509083, 1, 0.987335, 0.996179, 0.999765, 1, 0.987335, 0.996179, 0.999765, 1)
+
+[resource]
+gradient = SubResource("Gradient_i31ut")
+fill_to = Vector2(0.991453, 0)

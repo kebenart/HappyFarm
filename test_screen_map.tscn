@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://3dhlvo5povvi" path="res://collectable_milk.tscn" id="9_68slk"]
 [ext_resource type="PackedScene" uid="uid://cwmijivfpjnx2" path="res://collectable_stone.tscn" id="10_7730f"]
 [ext_resource type="PackedScene" uid="uid://bds3hxd1nr5fa" path="res://collectable_wheat.tscn" id="11_tccg7"]
-[ext_resource type="PackedScene" uid="uid://d2q7yqj8bn0rp" path="res://diurnal_system.tscn" id="12_qkyrv"]
+[ext_resource type="PackedScene" uid="uid://b4ce35hlnd4p" path="res://day_night_cycle_component.tscn" id="12_7ia31"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n48m3"]
 resource_local_to_scene = true
@@ -78,7 +78,6 @@ position = Vector2(378, 222)
 
 [node name="collectable_log" parent="." instance=ExtResource("8_cyngy")]
 position = Vector2(354, 251)
-scale = Vector2(0.82667, 0.829402)
 
 [node name="collectable_milk" parent="." instance=ExtResource("9_68slk")]
 position = Vector2(383, 244)
@@ -92,9 +91,4 @@ position = Vector2(415, 272)
 [node name="collectable_wheat2" parent="." instance=ExtResource("11_tccg7")]
 position = Vector2(410, 249)
 
-[node name="Diurnal_System" parent="." instance=ExtResource("12_qkyrv")]
-
-[node name="ColorRect" parent="Diurnal_System" index="0"]
-color = Color(0, 0.0509804, 0.211765, 0)
-
-[editable path="Diurnal_System"]
+[node name="DayNightCycleComponent" parent="." instance=ExtResource("12_7ia31")]
