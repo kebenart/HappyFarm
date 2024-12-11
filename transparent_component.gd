@@ -5,7 +5,8 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var parent = get_parent() as Sprite2D
-		parent.modulate.a = transparent
+		if parent:
+			parent.modulate.a = transparent
 
 
 func _on_body_exited(body: Node2D) -> void:

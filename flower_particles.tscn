@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsdlb14kjy8va"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ax0ob"]
+particle_flag_disable_z = true
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
+gravity = Vector3(0, -100, 0)
+
+[node name="FlowerParticles" type="GPUParticles2D"]
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_ax0ob")
+lifetime = 0.6
+speed_scale = 0.5
+explosiveness = 0.5
+randomness = 0.5

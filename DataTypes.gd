@@ -7,3 +7,14 @@ enum Tools {
 	CHOPPING,
 	WATER
 }
+
+
+# 生长状态 种子, 发芽,生长,繁殖,成熟,收获
+enum GrowthStates {
+	Seed,
+	Germination,
+	Vegetative,
+	Reproduction,
+	Maturity,
+	Harvesting
+}

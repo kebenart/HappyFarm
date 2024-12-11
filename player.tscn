@@ -400,16 +400,20 @@ size = Vector2(8, 6)
 [sub_resource type="CircleShape2D" id="CircleShape2D_s3n68"]
 radius = 3.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("hit_component_collision_share")]
 position = Vector2(0, -8)
 collision_layer = 2
 script = ExtResource("1_75meo")
 current_tool = 2
+hit_component_collision_share = NodePath("HitComponent/HitComponentCollisionShare")
+metadata/_edit_horizontal_guides_ = [-15.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kchu3")
-animation = &"hoe_down"
+animation = &"water_down"
 autoplay = "idle_down"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -434,11 +438,10 @@ script = ExtResource("7_mbxa1")
 player = NodePath("../..")
 animatedPlayer = NodePath("../../AnimatedSprite2D")
 
-[node name="Chopping" type="Node" parent="StateMatchine" node_paths=PackedStringArray("player", "animatedPlayer", "hit_component_collision_share")]
+[node name="Chopping" type="Node" parent="StateMatchine" node_paths=PackedStringArray("player", "animatedPlayer")]
 script = ExtResource("8_damdp")
 player = NodePath("../..")
 animatedPlayer = NodePath("../../AnimatedSprite2D")
-hit_component_collision_share = NodePath("../../HitComponent/HitComponentCollisionShare")
 
 [node name="Water" type="Node" parent="StateMatchine" node_paths=PackedStringArray("player", "animatedPlayer")]
 script = ExtResource("9_qimwh")
@@ -449,7 +452,7 @@ animatedPlayer = NodePath("../../AnimatedSprite2D")
 position = Vector2(0, 0)
 
 [node name="HitComponentCollisionShare" type="CollisionShape2D" parent="HitComponent"]
-position = Vector2(-9, 7)
+position = Vector2(-6, 15)
 rotation = -0.0175425
 shape = SubResource("CircleShape2D_s3n68")
 debug_color = Color(0.744327, 0.272116, 0.925695, 0.42)

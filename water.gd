@@ -30,6 +30,27 @@ func _on_enter()->void:
 		animatedPlayer.play("water_left")
 	else:
 		animatedPlayer.play("water_down")
+	activated = true
 	
 func _on_exit()->void:
 	animatedPlayer.stop()
+	activated = false
+	player.hit_component_collision_share.disabled = true
+
+
+
+func _on_animated_sprite_2d_frame_changed(frame:int) -> void:
+	if not frame == 1:
+		return
+	if player.direction == Vector2.UP:
+		player.hit_component_collision_share.position = Vector2(6,-7)
+	elif player.direction == Vector2.RIGHT:
+		player.hit_component_collision_share.position = Vector2(20,2)
+	elif player.direction == Vector2.DOWN:
+		player.hit_component_collision_share.position = Vector2(-6,15)
+	elif player.direction == Vector2.LEFT:
+		player.hit_component_collision_share.position = Vector2(-20,2)
+	else:
+		player.hit_component_collision_share.position = Vector2(-6,5)
+		
+	player.hit_component_collision_share.disabled = false
