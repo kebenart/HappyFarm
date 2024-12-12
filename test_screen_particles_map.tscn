@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=4 uid="uid://b4uwaotlxld8a"]
+[gd_scene load_steps=15 format=4 uid="uid://b4uwaotlxld8a"]
 
-[ext_resource type="PackedScene" path="res://game_screen.tscn" id="1_tc40a"]
+[ext_resource type="PackedScene" uid="uid://cresmkx45g5cw" path="res://game_screen.tscn" id="1_tc40a"]
 [ext_resource type="TileSet" uid="uid://bdsii6fmypkx6" path="res://new_tile_set.tres" id="2_s7mph"]
 [ext_resource type="PackedScene" uid="uid://clu45qh1a6qmc" path="res://smail_tree.tscn" id="3_68ws6"]
 [ext_resource type="Shader" path="res://smail_tree.gdshader" id="4_2n1en"]
 [ext_resource type="PackedScene" uid="uid://cwplsfvo02rvm" path="res://player.tscn" id="5_u0djb"]
-[ext_resource type="PackedScene" path="res://collectable_egg.tscn" id="6_ui4ax"]
-[ext_resource type="PackedScene" path="res://collectable_eggplant.tscn" id="7_frv0m"]
-[ext_resource type="PackedScene" path="res://collectable_milk.tscn" id="8_m5s4f"]
+[ext_resource type="PackedScene" uid="uid://cxw3f56rkr2da" path="res://eggplant.tscn" id="6_sf6of"]
+[ext_resource type="PackedScene" uid="uid://c6fd3jk3vd7t7" path="res://collectable_egg.tscn" id="6_ui4ax"]
+[ext_resource type="PackedScene" uid="uid://bnu5nymggc401" path="res://collectable_eggplant.tscn" id="7_frv0m"]
+[ext_resource type="PackedScene" uid="uid://3dhlvo5povvi" path="res://collectable_milk.tscn" id="8_m5s4f"]
 [ext_resource type="PackedScene" uid="uid://cwmijivfpjnx2" path="res://collectable_stone.tscn" id="9_6xk3a"]
-[ext_resource type="PackedScene" path="res://collectable_wheat.tscn" id="10_bd38b"]
-[ext_resource type="PackedScene" path="res://day_night_cycle_component.tscn" id="11_ncxhd"]
+[ext_resource type="PackedScene" uid="uid://bds3hxd1nr5fa" path="res://collectable_wheat.tscn" id="10_bd38b"]
+[ext_resource type="PackedScene" uid="uid://b4ce35hlnd4p" path="res://day_night_cycle_component.tscn" id="11_ncxhd"]
 [ext_resource type="PackedScene" uid="uid://dc5tgwmlfpodn" path="res://corn.tscn" id="12_fnweo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n48m3"]
@@ -86,6 +87,24 @@ position = Vector2(130, 247)
 
 [node name="Corn7" parent="." instance=ExtResource("12_fnweo")]
 position = Vector2(145, 236)
+
+[node name="eggplant" parent="." instance=ExtResource("6_sf6of")]
+position = Vector2(161, 170)
+
+[node name="eggplant2" parent="." instance=ExtResource("6_sf6of")]
+position = Vector2(125, 170)
+
+[node name="eggplant5" parent="." instance=ExtResource("6_sf6of")]
+position = Vector2(136, 181)
+
+[node name="eggplant6" parent="." instance=ExtResource("6_sf6of")]
+position = Vector2(113, 170)
+
+[node name="eggplant3" parent="." instance=ExtResource("6_sf6of")]
+position = Vector2(136, 170)
+
+[node name="eggplant4" parent="." instance=ExtResource("6_sf6of")]
+position = Vector2(148, 170)
 
 [node name="Player" parent="." instance=ExtResource("5_u0djb")]
 position = Vector2(323, 195)

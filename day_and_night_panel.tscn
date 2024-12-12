@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://csc2yjn8uf6s7"]
 
-[ext_resource type="Theme" uid="uid://dm4wsw1yu6pr2" path="res://game_ui_theme.tres" id="1_bcwti"]
+[ext_resource type="Theme" uid="uid://ckgylapr5g1no" path="res://game_ui_theme.tres" id="1_bcwti"]
 [ext_resource type="Texture2D" uid="uid://cxcmi6ioqmdas" path="res://assets/ui/base_ui.png" id="2_2seee"]
 [ext_resource type="Script" path="res://day_and_night_panel.gd" id="2_sca3m"]
 

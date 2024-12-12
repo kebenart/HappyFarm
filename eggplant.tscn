@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxw3f56rkr2da"]
+
+[ext_resource type="Script" path="res://eggplant.gd" id="1_1fptc"]
+[ext_resource type="Texture2D" uid="uid://cqwpgtb08j5na" path="res://assets/ui/Basic_Plants.png" id="1_f7vwn"]
+[ext_resource type="PackedScene" uid="uid://ov5t7o4jevc2" path="res://growth_cycle_component.tscn" id="1_r63sp"]
+[ext_resource type="PackedScene" uid="uid://deqf2wxh6xk5c" path="res://transparent_component.tscn" id="2_p4s88"]
+[ext_resource type="PackedScene" uid="uid://cstuk56ut3t6m" path="res://hurt_component.tscn" id="2_rmiun"]
+[ext_resource type="PackedScene" uid="uid://dsdlb14kjy8va" path="res://flower_particles.tscn" id="3_7kpg7"]
+[ext_resource type="PackedScene" uid="uid://1eg84fruremy" path="res://watering_particles.tscn" id="3_rshiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjshm"]
+atlas = ExtResource("1_f7vwn")
+region = Rect2(0, 16, 96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oa80n"]
+size = Vector2(6, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e37c"]
+size = Vector2(6, 5)
+
+[node name="eggplant" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_1fptc")
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("1_r63sp")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = SubResource("AtlasTexture_sjshm")
+hframes = 6
+frame = 1
+
+[node name="TransparentComponent" parent="Sprite2D" instance=ExtResource("2_p4s88")]
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/TransparentComponent"]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_oa80n")
+
+[node name="FlowerParticles" parent="." instance=ExtResource("3_7kpg7")]
+
+[node name="WateringParticles" parent="." instance=ExtResource("3_rshiy")]
+position = Vector2(0, -1)
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_rmiun")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_7e37c")
