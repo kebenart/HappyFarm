@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv4qqc7tap4cy"]
+
+[ext_resource type="Theme" uid="uid://ckgylapr5g1no" path="res://game_ui_theme.tres" id="1_jlmy4"]
+[ext_resource type="FontFile" uid="uid://dylgj21f47kjx" path="res://assets/fonts/zx_palm.ttf" id="2_d2j2q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5tmju"]
+load_path = "res://.godot/imported/Egg_item.png-8d6f7abd822008d46e906eee682433e1.ctex"
+
+[node name="egg_pickup_effect" type="Sprite2D"]
+position = Vector2(-8, -2)
+texture = SubResource("CompressedTexture2D_5tmju")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 10.0
+offset_top = -4.0
+offset_right = 26.0
+offset_bottom = 3.0
+size_flags_horizontal = 4
+theme = ExtResource("1_jlmy4")
+theme_override_fonts/font = ExtResource("2_d2j2q")
+theme_override_font_sizes/font_size = 8
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1

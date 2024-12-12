@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6fd3jk3vd7t7"]
+[gd_scene load_steps=8 format=3 uid="uid://c6fd3jk3vd7t7"]
 
 [ext_resource type="Shader" path="res://shadow.gdshader" id="1_eca6i"]
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_2n6cs"]
+[ext_resource type="PackedScene" uid="uid://bv4qqc7tap4cy" path="res://egg_pickup_effect.tscn" id="3_b6ra1"]
 [ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="4_u00mg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vbvas"]
@@ -28,6 +29,7 @@ texture = SubResource("CompressedTexture2D_p63kc")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_2n6cs")]
 collectable_name = "egg"
+pickup_effect_scene = ExtResource("3_b6ra1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 position = Vector2(-0.5, 0)

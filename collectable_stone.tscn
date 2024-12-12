@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwmijivfpjnx2"]
+[gd_scene load_steps=7 format=3 uid="uid://cwmijivfpjnx2"]
 
 [ext_resource type="Material" uid="uid://b4e4xtlascwwy" path="res://float_shadow.tres" id="1_2xxqb"]
 [ext_resource type="Texture2D" uid="uid://dn0jo6vqv4xuh" path="res://assets/ui/stone_item.png" id="1_l3uig"]
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_rkpds"]
+[ext_resource type="PackedScene" uid="uid://jkmv17ivmpbh" path="res://stone_pickup_effect.tscn" id="4_nvi7q"]
 [ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="4_uwbvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4gj4"]
@@ -17,6 +18,7 @@ texture = ExtResource("1_l3uig")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_rkpds")]
 collectable_name = "stone"
+pickup_effect_scene = ExtResource("4_nvi7q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 position = Vector2(-1, -2)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://driyj51um73nj"]
+
+[ext_resource type="Theme" uid="uid://ckgylapr5g1no" path="res://game_ui_theme.tres" id="1_2foq5"]
+[ext_resource type="FontFile" uid="uid://dylgj21f47kjx" path="res://assets/fonts/zx_palm.ttf" id="2_owbvy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wduf3"]
+load_path = "res://.godot/imported/Basic_Plants.png-ab8188bcdc957de8973fd0a29c1aae7e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrlhh"]
+atlas = SubResource("CompressedTexture2D_wduf3")
+region = Rect2(80, 16, 16, 16)
+
+[node name="eggplant_pickup_effect" type="Sprite2D"]
+position = Vector2(-8, -2)
+texture = SubResource("AtlasTexture_jrlhh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 10.0
+offset_top = -4.0
+offset_right = 26.0
+offset_bottom = 3.0
+size_flags_horizontal = 4
+theme = ExtResource("1_2foq5")
+theme_override_fonts/font = ExtResource("2_owbvy")
+theme_override_font_sizes/font_size = 8
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1

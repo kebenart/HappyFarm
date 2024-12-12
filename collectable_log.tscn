@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh6y8lxw3wrdy"]
+[gd_scene load_steps=7 format=3 uid="uid://bh6y8lxw3wrdy"]
 
 [ext_resource type="Texture2D" uid="uid://bh43ksrca3yiu" path="res://assets/ui/log_item.png" id="1_lf3xj"]
 [ext_resource type="Material" uid="uid://b4e4xtlascwwy" path="res://float_shadow.tres" id="1_mm52a"]
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_2jm57"]
+[ext_resource type="PackedScene" uid="uid://dhyk2hyrvhjo8" path="res://log_pickup_effect.tscn" id="4_c6568"]
 [ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="4_qnx4g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15vou"]
@@ -16,6 +17,7 @@ texture = ExtResource("1_lf3xj")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_2jm57")]
 collectable_name = "log"
+pickup_effect_scene = ExtResource("4_c6568")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 position = Vector2(-0.5, 0)

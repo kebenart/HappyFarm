@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://jkmv17ivmpbh"]
+
+[ext_resource type="Theme" uid="uid://ckgylapr5g1no" path="res://game_ui_theme.tres" id="2_163k6"]
+[ext_resource type="FontFile" uid="uid://dylgj21f47kjx" path="res://assets/fonts/zx_palm.ttf" id="3_xo3ub"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nev8d"]
+load_path = "res://.godot/imported/Basic_Grass_Biom_things.png-3b5ca8056d8f71ec983e875a21c72981.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bpbr"]
+atlas = SubResource("CompressedTexture2D_nev8d")
+region = Rect2(112, 16, 16, 16)
+
+[node name="stone_pickup_effect" type="Sprite2D"]
+position = Vector2(-5, -2)
+texture = SubResource("AtlasTexture_0bpbr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 7.0
+offset_top = -7.0
+offset_right = 23.0
+size_flags_horizontal = 4
+theme = ExtResource("2_163k6")
+theme_override_fonts/font = ExtResource("3_xo3ub")
+theme_override_font_sizes/font_size = 8
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1

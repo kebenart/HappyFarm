@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://collectable_component.gd" id="1_1xeam"]
 
-[node name="CollectableComponent" type="Area2D"]
+[node name="t" type="Area2D"]
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_1xeam")

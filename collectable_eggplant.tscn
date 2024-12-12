@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnu5nymggc401"]
+[gd_scene load_steps=7 format=3 uid="uid://bnu5nymggc401"]
 
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="1_dgsex"]
 [ext_resource type="Material" uid="uid://b4e4xtlascwwy" path="res://float_shadow.tres" id="1_k7c50"]
 [ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="1_qe5rn"]
 [ext_resource type="Texture2D" uid="uid://b5q2apo4nex72" path="res://assets/ui/eggplant_item.png" id="2_f1jiy"]
+[ext_resource type="PackedScene" uid="uid://driyj51um73nj" path="res://eggplant_pickup_effect.tscn" id="5_tsvi6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w4cf4"]
 radius = 7.22268
@@ -22,6 +23,7 @@ sprite2D = NodePath("..")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("1_dgsex")]
 collectable_name = "eggplant"
+pickup_effect_scene = ExtResource("5_tsvi6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 position = Vector2(0, -1.19209e-07)

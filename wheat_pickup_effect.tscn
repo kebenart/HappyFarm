@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqda2xvhpe1uy"]
+
+[ext_resource type="Texture2D" uid="uid://cqwpgtb08j5na" path="res://assets/ui/Basic_Plants.png" id="1_v5gxw"]
+[ext_resource type="Theme" uid="uid://ckgylapr5g1no" path="res://game_ui_theme.tres" id="2_37tsm"]
+[ext_resource type="FontFile" uid="uid://dylgj21f47kjx" path="res://assets/fonts/zx_palm.ttf" id="3_yjg4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx4ji"]
+atlas = ExtResource("1_v5gxw")
+region = Rect2(80, 0, 16, 16)
+
+[node name="wheat_pickup_effect" type="Sprite2D"]
+position = Vector2(-8, -2)
+texture = SubResource("AtlasTexture_cx4ji")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 10.0
+offset_top = -4.0
+offset_right = 26.0
+offset_bottom = 3.0
+size_flags_horizontal = 4
+theme = ExtResource("2_37tsm")
+theme_override_fonts/font = ExtResource("3_yjg4a")
+theme_override_font_sizes/font_size = 8
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1

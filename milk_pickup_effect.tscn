@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc5x757ksdq6c"]
+
+[ext_resource type="Theme" uid="uid://ckgylapr5g1no" path="res://game_ui_theme.tres" id="2_oh1n5"]
+[ext_resource type="FontFile" uid="uid://dylgj21f47kjx" path="res://assets/fonts/zx_palm.ttf" id="3_5nu20"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a74ys"]
+load_path = "res://.godot/imported/milk_item.png-cc354199c9a78e97924c3a019056ed62.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp4l8"]
+atlas = SubResource("CompressedTexture2D_a74ys")
+region = Rect2(0, 0, 16, 16)
+
+[node name="milk_pickup_effect" type="Sprite2D"]
+position = Vector2(-8, -2)
+texture = SubResource("AtlasTexture_lp4l8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 10.0
+offset_top = -4.0
+offset_right = 26.0
+offset_bottom = 3.0
+size_flags_horizontal = 4
+theme = ExtResource("2_oh1n5")
+theme_override_fonts/font = ExtResource("3_5nu20")
+theme_override_font_sizes/font_size = 8
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1

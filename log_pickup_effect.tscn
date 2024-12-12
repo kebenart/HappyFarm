@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhyk2hyrvhjo8"]
+
+[ext_resource type="Theme" uid="uid://ckgylapr5g1no" path="res://game_ui_theme.tres" id="1_nb1ad"]
+[ext_resource type="FontFile" uid="uid://dylgj21f47kjx" path="res://assets/fonts/zx_palm.ttf" id="2_mclth"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ysweg"]
+load_path = "res://.godot/imported/Basic_Grass_Biom_things.png-3b5ca8056d8f71ec983e875a21c72981.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lry15"]
+atlas = SubResource("CompressedTexture2D_ysweg")
+region = Rect2(80, 32, 16, 16)
+
+[node name="log_pickup_effect" type="Sprite2D"]
+position = Vector2(-8, -2)
+texture = SubResource("AtlasTexture_lry15")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 10.0
+offset_top = -4.0
+offset_right = 26.0
+offset_bottom = 3.0
+size_flags_horizontal = 4
+theme = ExtResource("1_nb1ad")
+theme_override_fonts/font = ExtResource("2_mclth")
+theme_override_font_sizes/font_size = 8
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1
