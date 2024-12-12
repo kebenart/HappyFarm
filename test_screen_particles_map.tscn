@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://b4uwaotlxld8a"]
+[gd_scene load_steps=16 format=4 uid="uid://b4uwaotlxld8a"]
 
 [ext_resource type="PackedScene" uid="uid://cresmkx45g5cw" path="res://game_screen.tscn" id="1_tc40a"]
+[ext_resource type="PackedScene" uid="uid://c21um6bm8j5jf" path="res://rain_panel.tscn" id="2_g23aa"]
 [ext_resource type="TileSet" uid="uid://bdsii6fmypkx6" path="res://new_tile_set.tres" id="2_s7mph"]
 [ext_resource type="PackedScene" uid="uid://clu45qh1a6qmc" path="res://smail_tree.tscn" id="3_68ws6"]
 [ext_resource type="Shader" path="res://smail_tree.gdshader" id="4_2n1en"]
@@ -22,6 +23,8 @@ shader_parameter/shake_speed = 20.0
 
 [node name="Test_Screen_map" type="Node2D"]
 y_sort_enabled = true
+
+[node name="RainPanel" parent="." instance=ExtResource("2_g23aa")]
 
 [node name="GameScreen" parent="." instance=ExtResource("1_tc40a")]
 
@@ -67,44 +70,46 @@ tile_set = ExtResource("2_s7mph")
 material = SubResource("ShaderMaterial_n48m3")
 position = Vector2(360, 194)
 
-[node name="Corn" parent="." instance=ExtResource("12_fnweo")]
-position = Vector2(160, 236)
+[node name="crop_group" type="Node2D" parent="."]
 
-[node name="Corn2" parent="." instance=ExtResource("12_fnweo")]
-position = Vector2(130, 236)
-
-[node name="Corn3" parent="." instance=ExtResource("12_fnweo")]
-position = Vector2(114, 236)
-
-[node name="Corn4" parent="." instance=ExtResource("12_fnweo")]
-position = Vector2(160, 247)
-
-[node name="Corn5" parent="." instance=ExtResource("12_fnweo")]
-position = Vector2(145, 247)
-
-[node name="Corn6" parent="." instance=ExtResource("12_fnweo")]
-position = Vector2(130, 247)
-
-[node name="Corn7" parent="." instance=ExtResource("12_fnweo")]
-position = Vector2(145, 236)
-
-[node name="eggplant" parent="." instance=ExtResource("6_sf6of")]
+[node name="eggplant" parent="crop_group" instance=ExtResource("6_sf6of")]
 position = Vector2(161, 170)
 
-[node name="eggplant2" parent="." instance=ExtResource("6_sf6of")]
+[node name="eggplant2" parent="crop_group" instance=ExtResource("6_sf6of")]
 position = Vector2(125, 170)
 
-[node name="eggplant5" parent="." instance=ExtResource("6_sf6of")]
+[node name="eggplant5" parent="crop_group" instance=ExtResource("6_sf6of")]
 position = Vector2(136, 181)
 
-[node name="eggplant6" parent="." instance=ExtResource("6_sf6of")]
+[node name="eggplant6" parent="crop_group" instance=ExtResource("6_sf6of")]
 position = Vector2(113, 170)
 
-[node name="eggplant3" parent="." instance=ExtResource("6_sf6of")]
+[node name="eggplant3" parent="crop_group" instance=ExtResource("6_sf6of")]
 position = Vector2(136, 170)
 
-[node name="eggplant4" parent="." instance=ExtResource("6_sf6of")]
+[node name="eggplant4" parent="crop_group" instance=ExtResource("6_sf6of")]
 position = Vector2(148, 170)
+
+[node name="Corn" parent="crop_group" instance=ExtResource("12_fnweo")]
+position = Vector2(160, 236)
+
+[node name="Corn2" parent="crop_group" instance=ExtResource("12_fnweo")]
+position = Vector2(130, 236)
+
+[node name="Corn3" parent="crop_group" instance=ExtResource("12_fnweo")]
+position = Vector2(114, 236)
+
+[node name="Corn4" parent="crop_group" instance=ExtResource("12_fnweo")]
+position = Vector2(160, 247)
+
+[node name="Corn5" parent="crop_group" instance=ExtResource("12_fnweo")]
+position = Vector2(145, 247)
+
+[node name="Corn6" parent="crop_group" instance=ExtResource("12_fnweo")]
+position = Vector2(130, 247)
+
+[node name="Corn7" parent="crop_group" instance=ExtResource("12_fnweo")]
+position = Vector2(145, 236)
 
 [node name="Player" parent="." instance=ExtResource("5_u0djb")]
 position = Vector2(323, 195)

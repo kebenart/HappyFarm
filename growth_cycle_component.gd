@@ -19,7 +19,7 @@ var current_day:int
 
 func _ready() -> void:
 	DayAndNightManager.time_tick_day.connect(on_time_tick_day)
-	
+	WeatherManager.raining.connect(on_raining)
 
 
 func on_time_tick_day(day: int)->void:
@@ -59,3 +59,7 @@ func harvest_state(starting_day:int,current_day:int) -> void:
 
 func get_current_growth_state() -> DataTypes.GrowthStates:
 	return current_growth_state
+
+func on_raining() -> void:
+	if !is_watered:
+		is_watered = true

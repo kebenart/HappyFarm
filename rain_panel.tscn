@@ -1,11 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://c21um6bm8j5jf"]
+[gd_scene load_steps=7 format=3 uid="uid://c21um6bm8j5jf"]
 
 [ext_resource type="Material" uid="uid://5hi2jyl0vov2" path="res://particle/rain_drop.tres" id="1_c5oj1"]
+[ext_resource type="Script" path="res://rain_panel.gd" id="1_p6rfw"]
+[ext_resource type="Material" uid="uid://bw2fa8gh03bpo" path="res://rain_bloom.tres" id="2_gfvsv"]
+[ext_resource type="Material" uid="uid://iy2ut7nsmo6x" path="res://rain_bloom_particle.tres" id="2_ivv4g"]
+[ext_resource type="Texture2D" uid="uid://bxwb2wghxnxxk" path="res://particle/raindrop.png" id="2_ksl5l"]
+[ext_resource type="Texture2D" uid="uid://c7yw7m5rqeoi2" path="res://particle/rain_bloom.png" id="3_ssp0y"]
 
 [node name="RainPanel" type="CanvasLayer"]
+script = ExtResource("1_p6rfw")
 metadata/_edit_vertical_guides_ = [643.0]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="RainParticles" type="GPUParticles2D" parent="."]
 position = Vector2(311, 10)
-amount = 200
+emitting = false
+amount = 100
 process_material = ExtResource("1_c5oj1")
+texture = ExtResource("2_ksl5l")
+lifetime = 1.5
+preprocess = 5.0
+
+[node name="RainBloomParticles" type="GPUParticles2D" parent="."]
+material = ExtResource("2_gfvsv")
+position = Vector2(314, 178)
+emitting = false
+amount = 40
+process_material = ExtResource("2_ivv4g")
+texture = ExtResource("3_ssp0y")
+lifetime = 0.6
+preprocess = 0.6

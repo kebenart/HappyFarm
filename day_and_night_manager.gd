@@ -20,6 +20,9 @@ var time: float = 0.0
 var current_minute: int = -1
 var current_day: int = 0
 
+# 当天是否下雨
+var current_rain = false
+
 signal game_time(time: float)
 
 # 时间变更
