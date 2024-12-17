@@ -5,6 +5,7 @@ extends Node
 
 @onready var player:Player = get_tree().get_first_node_in_group("player")
 
+# 判断 鼠标点击位置和,单元格距离, 进行设置
 
 # TODO 遗留问题
 # 1.土地耕种范围问题
