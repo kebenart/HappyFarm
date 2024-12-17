@@ -5,7 +5,9 @@ enum Tools {
 	NONE,
 	HOE,
 	CHOPPING,
-	WATER
+	WATER,
+	WHEAT,
+	EGG_PLANT
 }
 
 

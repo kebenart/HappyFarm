@@ -89,3 +89,5 @@ icon_alignment = 1
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolHoe" to="." method="_on_tool_hoe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolChopping" to="." method="_on_tool_chopping_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWater" to="." method="_on_tool_water_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCom" to="." method="_on_tool_com_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolEggplant" to="." method="_on_tool_eggplant_pressed"]

@@ -26,3 +26,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		tool_hoe.release_focus()
 		tool_chopping.release_focus()
 		tool_water.release_focus()
+		tool_com.release_focus()
+		tool_eggplant.release_focus()
+
+
+func _on_tool_com_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.WHEAT)
+
+
+func _on_tool_eggplant_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.EGG_PLANT)
