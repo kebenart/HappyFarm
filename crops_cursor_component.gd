@@ -64,6 +64,9 @@ func get_cell_under_mouse() -> void:
 
 # 添加,当前位置必须是耕种土地,且没有作物时,才可种植
 func add_crop() -> void:
+	if !check_direction():
+		return
+		
 	if distance < 20.0 && cell_source_id != -1:
 		if has_crop():
 			return
@@ -89,8 +92,27 @@ func has_crop() -> bool:
 	return false
 	
 func remove_crop() -> void:
+	if !check_direction():
+		return
+		
 	if distance < 20.0:
 		var nodes = get_parent().find_child("CropFields").get_children()
 		for node:Node2D in nodes:
 			if node.global_position == local_cell_position:
 				node.queue_free()
+
+
+# 检测鼠标点击的单元格是否在 角色的前方
+func check_direction() -> bool:
+	var direction = player.global_position.direction_to(local_cell_position)
+	print("player.direction: ",player.direction, "  ,direction: ",direction)
+	if player.direction == Vector2.LEFT && direction.x < 0:
+		return true
+	elif player.direction == Vector2.RIGHT && direction.x > 0:
+		return true
+	elif player.direction ==Vector2.UP && direction.y < 0:
+		return true
+	elif player.direction ==Vector2.DOWN && direction.y > 0:
+		return true
+
+	return false

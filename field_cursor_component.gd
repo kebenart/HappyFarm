@@ -57,20 +57,37 @@ func get_cell_under_mouse() -> void:
 	
 	# 获取角色到点击单元格的距离
 	distance = player.global_position.distance_to(local_cell_position)
-	print("ground: mouse_position: ",mouse_position," cell_position: ",cell_position, " cell_id: ",cell_source_id)
-	print("ground-distance: ",distance)
+	var direction = player.global_position.direction_to(local_cell_position)
+	#print("direction: ",direction)
+	#print("ground: mouse_position: ",mouse_position," cell_position: ",cell_position, " cell_id: ",cell_source_id," local: ",local_cell_position)
+	#print("ground-distance: ",distance)
 
 
 # 添加耕种土地
 # 判断是否有障碍物,如果有,则不能添加
 func add_tilled_soil_cell() -> void:
+	if !check_direction():
+		return 
+		
 	if distance < 20.0 && cell_source_id != -1:
 		if has_obstacle():
 			return 
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position],terrain_set,terrain,true)
 		#tilled_soil_tilemap_layer.notify_runtime_tile_data_update()
 
+func check_direction() -> bool:
+	var direction = player.global_position.direction_to(local_cell_position)
+	print("player.direction: ",player.direction, "  ,direction: ",direction)
+	if player.direction == Vector2.LEFT && direction.x < 0:
+		return true
+	elif player.direction == Vector2.RIGHT && direction.x > 0:
+		return true
+	elif player.direction ==Vector2.UP && direction.y < 0:
+		return true
+	elif player.direction ==Vector2.DOWN && direction.y > 0:
+		return true
 
+	return false
 
 
 func has_obstacle() -> bool:
@@ -86,8 +103,10 @@ func has_obstacle() -> bool:
 	return false
 
 # 移除耕种土地
-
 func remove_tilled_soil_cell() -> void:
+	if !check_direction():
+		return
+		
 	# 判断当前位置是否有作物, 如果有先移除作物,
 	if distance < 20.0:
 		if has_crop():
