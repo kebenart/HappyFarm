@@ -8,13 +8,11 @@ extends Node
 # 判断 鼠标点击位置和,单元格距离, 进行设置
 
 # TODO 遗留问题
-# 1.土地耕种范围问题
-# 2.移除土地,没有自动移除作物
-# 3.作物交水范围问题
-# 4.鼠标点击范围区间需要调试
-# 5.同一位置可同时种植作物问题.
-# 6.没有耕种土地,也可种植问题
-# 7.可叠加种植问题
+# 1.土地耕种范围问题 ?   ✅
+# 2.移除土地,没有自动移除作物  ✅
+# 5.同一位置可同时种植作物问题.  ✅
+# 6.没有耕种土地,也可种植问题   ✅
+# 7.可叠加种植问题        ✅
 
 
 var corn_plant_scene = preload("res://corn.tscn")
@@ -30,7 +28,6 @@ var cell_source_id: int
 var local_cell_position:Vector2
 # 距离
 var distance: float
-
 
 
 # 监听事件
@@ -62,11 +59,15 @@ func get_cell_under_mouse() -> void:
 	
 	# 获取角色到点击单元格的距离
 	distance = player.global_position.distance_to(local_cell_position)
-	print("mouse_position: ",mouse_position," cell_position: ",cell_position, " cell_id: ",cell_source_id)
-	print("distance: ",distance)
+	print("crop-mouse_position: ",mouse_position," cell_position: ",cell_position, " cell_id: ",cell_source_id)
+	print("crop-distance: ",distance)
 
+# 添加,当前位置必须是耕种土地,且没有作物时,才可种植
 func add_crop() -> void:
-	if distance < 30.0:
+	if distance < 20.0 && cell_source_id != -1:
+		if has_crop():
+			return
+		
 		if ToolManager.selected_tool == DataTypes.Tools.WHEAT:
 			var corn_instance = corn_plant_scene.instantiate() as Node2D
 			corn_instance.global_position = local_cell_position
@@ -79,9 +80,16 @@ func add_crop() -> void:
 			get_parent().find_child("CropFields").add_child(egg_plant)
 
 
+func has_crop() -> bool:
+	var nodes = get_parent().find_child("CropFields").get_children()
+	for node:Node2D in nodes:
+		if node.global_position == local_cell_position:
+			return true
+
+	return false
 	
 func remove_crop() -> void:
-	if distance < 30.0:
+	if distance < 20.0:
 		var nodes = get_parent().find_child("CropFields").get_children()
 		for node:Node2D in nodes:
 			if node.global_position == local_cell_position:

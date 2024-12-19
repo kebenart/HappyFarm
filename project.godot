@@ -40,6 +40,7 @@ project/assembly_name="HappyFarm"
 navigation_polygon_source_geometry_group=""
 navigation_chicken_group=""
 player=""
+obstacle="障碍物组"
 
 [input]
 

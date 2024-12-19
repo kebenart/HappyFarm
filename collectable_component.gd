@@ -15,6 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 		get_parent().queue_free()
 
 
+# 添加物品拾取效果
 func add_effect(body: Node2D) ->void:
 	if !pickup_effect_scene:
 		return

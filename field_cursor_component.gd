@@ -57,16 +57,58 @@ func get_cell_under_mouse() -> void:
 	
 	# 获取角色到点击单元格的距离
 	distance = player.global_position.distance_to(local_cell_position)
-	print("mouse_position: ",mouse_position," cell_position: ",cell_position, " cell_id: ",cell_source_id)
-	print("distance: ",distance)
+	print("ground: mouse_position: ",mouse_position," cell_position: ",cell_position, " cell_id: ",cell_source_id)
+	print("ground-distance: ",distance)
+
 
 # 添加耕种土地
+# 判断是否有障碍物,如果有,则不能添加
 func add_tilled_soil_cell() -> void:
-	if distance < 30.0 && cell_source_id != -1:
+	if distance < 20.0 && cell_source_id != -1:
+		if has_obstacle():
+			return 
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position],terrain_set,terrain,true)
+		#tilled_soil_tilemap_layer.notify_runtime_tile_data_update()
 
+
+
+
+func has_obstacle() -> bool:
+	var nodes  = get_tree().get_nodes_in_group("obstacle")
+	for node in nodes:
+		if !node is TileMapLayer:
+			continue
+		var tilemap_layer = node as TileMapLayer
+		var source_id = tilemap_layer.get_cell_source_id(cell_position)
+		if source_id != -1:
+			return true
+
+	return false
 
 # 移除耕种土地
+
 func remove_tilled_soil_cell() -> void:
-	if distance < 30.0:
+	# 判断当前位置是否有作物, 如果有先移除作物,
+	if distance < 20.0:
+		if has_crop():
+			remove_crop()
+			return
+		
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position],0,-1,true)
+		#tilled_soil_tilemap_layer.notify_runtime_tile_data_update()
+
+
+func has_crop() -> bool:
+	var nodes = get_parent().find_child("CropFields").get_children()
+	for node:Node2D in nodes:
+		if node.global_position == local_cell_position:
+			return true
+
+	return false
+	
+func remove_crop() -> void:
+	if distance < 20.0:
+		var nodes = get_parent().find_child("CropFields").get_children()
+		for node:Node2D in nodes:
+			if node.global_position == local_cell_position:
+				node.queue_free()
