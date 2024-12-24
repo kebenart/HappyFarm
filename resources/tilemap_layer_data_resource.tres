@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dxq640udiamfg"]
+
+[ext_resource type="Script" path="res://tilemap_layer_data_resource.gd" id="1_e7a5f"]
+
+[resource]
+script = ExtResource("1_e7a5f")
+tilemap_layer_used_cells = null
+terrain_set = null
+terrain = null
+global_position = null
+node_path = null
+parent_node_path = null
