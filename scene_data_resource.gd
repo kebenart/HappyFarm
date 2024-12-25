@@ -1,7 +1,6 @@
 class_name SceneDataResource
 extends NodeDataResource
 
-@export var node_name: String
 @export var scene_file_path: String
 
 func _save_data(node: Node2D) -> void:

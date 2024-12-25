@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cwplsfvo02rvm"]
+[gd_scene load_steps=56 format=3 uid="uid://cwplsfvo02rvm"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_75meo"]
 [ext_resource type="Texture2D" uid="uid://urfqk8ngtmcr" path="res://assets/Basic Charakter Spritesheet.png" id="1_ocrlw"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://chopping.gd" id="8_damdp"]
 [ext_resource type="Script" path="res://water.gd" id="9_qimwh"]
 [ext_resource type="PackedScene" uid="uid://bkr8nldhlcusg" path="res://hit_component.tscn" id="10_a2fyw"]
+[ext_resource type="PackedScene" uid="uid://dgmj3lho7k7cx" path="res://save_data_component.tscn" id="11_18t8a"]
+[ext_resource type="Resource" uid="uid://cqw3mjx7ph4ad" path="res://resources/node_data_resource.tres" id="12_i2j4o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjvbs"]
 atlas = ExtResource("2_3wnwt")
@@ -407,6 +409,9 @@ script = ExtResource("1_75meo")
 current_tool = 2
 hit_component_collision_share = NodePath("HitComponent/HitComponentCollisionShare")
 metadata/_edit_horizontal_guides_ = [-15.0]
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("11_18t8a")]
+save_data_resource = ExtResource("12_i2j4o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kchu3")

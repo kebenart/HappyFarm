@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cresmkx45g5cw"]
 
-[ext_resource type="Theme" uid="uid://dm4wsw1yu6pr2" path="res://game_ui_theme.tres" id="1_t7kan"]
+[ext_resource type="Theme" uid="uid://ckgylapr5g1no" path="res://game_ui_theme.tres" id="1_t7kan"]
 [ext_resource type="PackedScene" uid="uid://wy3bkq36en5v" path="res://tools_panel.tscn" id="2_8advt"]
 [ext_resource type="PackedScene" uid="uid://cvcj5vkjvncuh" path="res://inventory_item_panel.tscn" id="3_isl6s"]
 [ext_resource type="PackedScene" uid="uid://csc2yjn8uf6s7" path="res://day_and_night_panel.tscn" id="4_ga2r8"]
