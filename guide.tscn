@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxjamsg26dpf"]
+
+[ext_resource type="Script" path="res://guide.gd" id="1_51ig5"]
+[ext_resource type="Texture2D" uid="uid://urfqk8ngtmcr" path="res://assets/Basic Charakter Spritesheet.png" id="1_w1eko"]
+[ext_resource type="Shader" path="res://repleace_color.gdshader" id="2_j5osd"]
+[ext_resource type="PackedScene" uid="uid://dqyqfv6qmxjlx" path="res://interoperable.tscn" id="2_qudfx"]
+[ext_resource type="Texture2D" uid="uid://cxcmi6ioqmdas" path="res://assets/ui/base_ui.png" id="4_506k1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cv3fk"]
+shader = ExtResource("2_j5osd")
+shader_parameter/original_0 = Color(0.360784, 0.305882, 0.572549, 1)
+shader_parameter/original_1 = Color(0.462745, 0.427451, 0.666667, 1)
+shader_parameter/replace_0 = Color(0.721569, 0, 0.733333, 1)
+shader_parameter/replace_1 = Color(0.870588, 0, 0.396078, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l0kt"]
+atlas = ExtResource("1_w1eko")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73mrq"]
+atlas = ExtResource("1_w1eko")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jchlh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l0kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73mrq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_evfwf"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fi3o"]
+radius = 23.0217
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70aei"]
+atlas = ExtResource("4_506k1")
+region = Rect2(614, 5, 20, 21)
+margin = Rect2(0, 1, 0, 0)
+
+[node name="Guide" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_51ig5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cv3fk")
+sprite_frames = SubResource("SpriteFrames_jchlh")
+autoplay = "default"
+frame_progress = 0.181921
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_evfwf")
+
+[node name="Interoperable" parent="." instance=ExtResource("2_qudfx")]
+visible = false
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interoperable"]
+shape = SubResource("CircleShape2D_4fi3o")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -41.0
+offset_right = 14.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "E"
+icon = SubResource("AtlasTexture_70aei")
+flat = true
+icon_alignment = 1
