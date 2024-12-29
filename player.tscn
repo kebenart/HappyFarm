@@ -414,6 +414,7 @@ metadata/_edit_horizontal_guides_ = [-15.0]
 save_data_resource = ExtResource("12_i2j4o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 sprite_frames = SubResource("SpriteFrames_kchu3")
 animation = &"idle_down"
 autoplay = "idle_down"

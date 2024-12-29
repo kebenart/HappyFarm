@@ -47,10 +47,12 @@ region = Rect2(614, 5, 20, 21)
 margin = Rect2(0, 1, 0, 0)
 
 [node name="Guide" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_mask = 2
 script = ExtResource("1_51ig5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_cv3fk")
 sprite_frames = SubResource("SpriteFrames_jchlh")
 autoplay = "default"
@@ -58,17 +60,21 @@ frame_progress = 0.181921
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
+y_sort_enabled = true
 shape = SubResource("CircleShape2D_evfwf")
 
 [node name="Interoperable" parent="." instance=ExtResource("2_qudfx")]
 visible = false
+y_sort_enabled = true
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interoperable"]
+y_sort_enabled = true
 shape = SubResource("CircleShape2D_4fi3o")
 
 [node name="Button" type="Button" parent="."]
 visible = false
+y_sort_enabled = true
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

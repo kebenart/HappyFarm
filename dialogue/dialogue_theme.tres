@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://blxge2p466imh"]
+
+[ext_resource type="Texture2D" uid="uid://cxcmi6ioqmdas" path="res://assets/ui/base_ui.png" id="1_pvpo3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3mgb"]
+atlas = ExtResource("1_pvpo3")
+region = Rect2(59, 155, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52v00"]
+texture = SubResource("AtlasTexture_i3mgb")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62422"]
+atlas = ExtResource("1_pvpo3")
+region = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a2vex"]
+texture = SubResource("AtlasTexture_62422")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxTexture_52v00")
+CharacterNameText/base_type = &"RichTextLabel"
+CharacterNameText/font_sizes/normal_font_size = 14
+DialogueText/base_type = &"RichTextLabel"
+DialogueText/font_sizes/normal_font_size = 12
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+Panel/styles/panel = SubResource("StyleBoxTexture_a2vex")

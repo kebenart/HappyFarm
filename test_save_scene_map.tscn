@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://3dhlvo5povvi" path="res://collectable_milk.tscn" id="13_huuih"]
 [ext_resource type="PackedScene" uid="uid://cwmijivfpjnx2" path="res://collectable_stone.tscn" id="14_elp2d"]
 [ext_resource type="PackedScene" uid="uid://bds3hxd1nr5fa" path="res://collectable_wheat.tscn" id="15_be01h"]
-[ext_resource type="PackedScene" uid="uid://b4ce35hlnd4p" path="res://day_night_cycle_component.tscn" id="16_wct5a"]
+[ext_resource type="PackedScene" path="res://day_night_cycle_component.tscn" id="16_wct5a"]
 [ext_resource type="PackedScene" uid="uid://tay2vge8vwxo" path="res://save_level_data_component.tscn" id="17_1exal"]
 [ext_resource type="PackedScene" uid="uid://bjhyjrjsa23h6" path="res://test_scene_save_data_manager_component.tscn" id="18_i4ody"]
 [ext_resource type="PackedScene" uid="uid://bxjamsg26dpf" path="res://guide.tscn" id="21_k7let"]
@@ -26,8 +26,10 @@
 y_sort_enabled = true
 
 [node name="RainPanel" parent="." instance=ExtResource("1_cvlab")]
+process_mode = 3
 
 [node name="GameScreen" parent="." instance=ExtResource("2_1b6dh")]
+process_mode = 3
 
 [node name="Map" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -125,26 +127,37 @@ tilled_soil_tilemap_layer = NodePath("../Map/TilledSoil")
 script = ExtResource("9_6b20w")
 tilled_soil_timemap_layer = NodePath("../Map/TilledSoil")
 
+[node name="Guide" parent="." instance=ExtResource("21_k7let")]
+process_mode = 3
+position = Vector2(358, 190)
+
 [node name="Player" parent="." instance=ExtResource("10_c8n4d")]
+y_sort_enabled = true
 position = Vector2(323, 195)
 current_tool = 0
 
 [node name="collectable_egg" parent="." instance=ExtResource("11_2ol55")]
+process_mode = 3
 position = Vector2(355, 223)
 
 [node name="collectable_eggplant" parent="." instance=ExtResource("12_5chwt")]
+process_mode = 3
 position = Vector2(378, 222)
 
 [node name="collectable_milk" parent="." instance=ExtResource("13_huuih")]
+process_mode = 3
 position = Vector2(383, 244)
 
 [node name="CollectableStone" parent="." instance=ExtResource("14_elp2d")]
+process_mode = 3
 position = Vector2(426, 243)
 
 [node name="collectable_wheat" parent="." instance=ExtResource("15_be01h")]
+process_mode = 3
 position = Vector2(415, 272)
 
 [node name="collectable_wheat2" parent="." instance=ExtResource("15_be01h")]
+process_mode = 3
 position = Vector2(410, 249)
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("16_wct5a")]
@@ -152,6 +165,3 @@ position = Vector2(410, 249)
 [node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("18_i4ody")]
 
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("17_1exal")]
-
-[node name="Guide" parent="." instance=ExtResource("21_k7let")]
-position = Vector2(349, 156)
