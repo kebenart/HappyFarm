@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://cwql5myltt1gv"]
 
 [ext_resource type="PackedScene" uid="uid://c21um6bm8j5jf" path="res://rain_panel.tscn" id="1_twcf5"]
-[ext_resource type="PackedScene" path="res://game_screen.tscn" id="2_pg8tc"]
+[ext_resource type="PackedScene" uid="uid://cresmkx45g5cw" path="res://game_screen.tscn" id="2_pg8tc"]
 [ext_resource type="TileSet" uid="uid://bdsii6fmypkx6" path="res://new_tile_set.tres" id="3_37hqi"]
 [ext_resource type="PackedScene" uid="uid://cxw3f56rkr2da" path="res://eggplant.tscn" id="6_mv51f"]
 [ext_resource type="PackedScene" uid="uid://dc5tgwmlfpodn" path="res://corn.tscn" id="7_j8kxy"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://3dhlvo5povvi" path="res://collectable_milk.tscn" id="11_vaco0"]
 [ext_resource type="PackedScene" uid="uid://cwmijivfpjnx2" path="res://collectable_stone.tscn" id="12_tp37a"]
 [ext_resource type="PackedScene" uid="uid://bds3hxd1nr5fa" path="res://collectable_wheat.tscn" id="13_kdgth"]
-[ext_resource type="PackedScene" path="res://day_night_cycle_component.tscn" id="14_n4uvg"]
+[ext_resource type="PackedScene" uid="uid://b4ce35hlnd4p" path="res://day_night_cycle_component.tscn" id="14_n4uvg"]
 [ext_resource type="PackedScene" uid="uid://do4w17pgscm0n" path="res://field_cursor_component.tscn" id="15_deyku"]
 [ext_resource type="Script" path="res://field_cursor_component.gd" id="16_p6a83"]
 

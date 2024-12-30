@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cho5fiw7nmi47"]
+[gd_scene load_steps=6 format=3 uid="uid://cho5fiw7nmi47"]
 
 [ext_resource type="Script" path="res://dialogue/game_dialogue_ballon.gd" id="1_jj6qp"]
 [ext_resource type="Theme" uid="uid://blxge2p466imh" path="res://dialogue/dialogue_theme.tres" id="2_acxtg"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_gyj4v"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_a4ucy"]
+[ext_resource type="PackedScene" uid="uid://ckorfiiweqwqe" path="res://emotes_panel.tscn" id="4_xi5pl"]
 
 [node name="GameDialogueBalloon" type="CanvasLayer"]
 process_mode = 3
@@ -38,20 +39,27 @@ grow_vertical = 0
 mouse_filter = 1
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 70.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/Panel/Dialogue"]
 layout_mode = 2
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/VBoxContainer"]
+[node name="EmotesPanel" parent="Balloon/Panel/Dialogue/HBoxContainer" instance=ExtResource("4_xi5pl")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
+clip_contents = false
 layout_mode = 2
+size_flags_vertical = 4
 mouse_filter = 1
 theme = ExtResource("2_acxtg")
 theme_type_variation = &"CharacterNameText"
@@ -60,10 +68,10 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/VBoxContainer" instance=ExtResource("2_gyj4v")]
+[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer" instance=ExtResource("2_gyj4v")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 4
 theme = ExtResource("2_acxtg")
 theme_type_variation = &"DialogueText"
 text = "Dialogue..."

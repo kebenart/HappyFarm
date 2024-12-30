@@ -12,7 +12,7 @@ vec4 replace_color(vec4 color) {
 	// 计算差距小于等于1,进行替换颜色
 	vec4 original_color[2] = vec4[2](original_0,original_1);
 	vec4 replace_color[2] = vec4[2](replace_0,replace_1);
-	
+
 	for(int i =0;i<2;i++){
 		if(distance(color,original_color[i]) <= precision){
 			color = replace_color[i];

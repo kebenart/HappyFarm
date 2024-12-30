@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://3dhlvo5povvi" path="res://collectable_milk.tscn" id="13_huuih"]
 [ext_resource type="PackedScene" uid="uid://cwmijivfpjnx2" path="res://collectable_stone.tscn" id="14_elp2d"]
 [ext_resource type="PackedScene" uid="uid://bds3hxd1nr5fa" path="res://collectable_wheat.tscn" id="15_be01h"]
-[ext_resource type="PackedScene" path="res://day_night_cycle_component.tscn" id="16_wct5a"]
+[ext_resource type="PackedScene" uid="uid://b4ce35hlnd4p" path="res://day_night_cycle_component.tscn" id="16_wct5a"]
 [ext_resource type="PackedScene" uid="uid://tay2vge8vwxo" path="res://save_level_data_component.tscn" id="17_1exal"]
 [ext_resource type="PackedScene" uid="uid://bjhyjrjsa23h6" path="res://test_scene_save_data_manager_component.tscn" id="18_i4ody"]
 [ext_resource type="PackedScene" uid="uid://bxjamsg26dpf" path="res://guide.tscn" id="21_k7let"]

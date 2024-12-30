@@ -6,6 +6,11 @@ extends PanelContainer
 @onready var tool_com: Button = $MarginContainer/HBoxContainer/ToolCom
 @onready var tool_eggplant: Button = $MarginContainer/HBoxContainer/ToolEggplant
 
+func _ready() -> void:
+	tool_chopping.disabled = true
+	tool_water.disabled = true
+	tool_com.disabled = true
+	tool_eggplant.disabled = true
 
 
 func _on_tool_hoe_pressed() -> void:

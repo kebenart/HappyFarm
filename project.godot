@@ -23,6 +23,7 @@ DayAndNightManager="*res://day_and_night_manager.gd"
 WeatherManager="*res://weather_manager.gd"
 SaveGameManager="*res://save_game_manager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameDialogueManager="*res://game_dialogue_manager.gd"
 
 [display]
 
