@@ -9,6 +9,7 @@ var idle_emotes: Array = ["1_idle","3_ear","4_blink","5_happy"]
 func _ready() -> void:
 	animated_sprite_2d.play("1_idle")
 	
+#TODO 可增加拾取物品更改表情等优化
 func play_emote(animation: String) -> void:
 	animated_sprite_2d.play(animation)
 

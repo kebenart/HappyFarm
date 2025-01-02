@@ -33,4 +33,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		balloon.start(load("res://guide.dialogue"),"start")
 		
 		# 暂停当前页面活动
-		get_tree().paused = true		
+		GameDialogueManager.stop_world()	

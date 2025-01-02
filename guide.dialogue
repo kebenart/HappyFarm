@@ -5,5 +5,14 @@
 指导员:  你需要种植一些作物来养活它们.
 指导员:  这里有一些庄稼的种子和工具.
 
-do GameDialogueManager.action_give_crop_seeds()
+- 获取种子和工具
+	提莫: [获得种子和工具] 我要开始种田了!
+	do GameDialogueManager.action_give_crop_seeds()
+	do GameDialogueManager.run_world()
+	=> END
+- 暂时不需要
+ 	提莫: 我还不想工作,我要摆烂!
+
+do GameDialogueManager.run_world()
+
 => END

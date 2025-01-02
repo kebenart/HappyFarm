@@ -8,9 +8,27 @@ extends PanelContainer
 
 func _ready() -> void:
 	tool_chopping.disabled = true
+	# 同时关闭鼠标焦点模式
+	tool_chopping.focus_mode = Control.FOCUS_NONE
 	tool_water.disabled = true
+	tool_water.focus_mode = Control.FOCUS_NONE
 	tool_com.disabled = true
+	tool_com.focus_mode = Control.FOCUS_NONE
 	tool_eggplant.disabled = true
+	tool_eggplant.focus_mode = Control.FOCUS_NONE
+	GameDialogueManager.give_crop_seeds.connect(on_enable_tools)
+
+
+
+func on_enable_tools() -> void:
+	tool_chopping.disabled = false
+	tool_chopping.focus_mode = Control.FOCUS_ALL
+	tool_water.disabled = false
+	tool_water.focus_mode = Control.FOCUS_ALL
+	tool_com.disabled = false
+	tool_com.focus_mode = Control.FOCUS_ALL
+	tool_eggplant.disabled = false
+	tool_eggplant.focus_mode = Control.FOCUS_ALL
 
 
 func _on_tool_hoe_pressed() -> void:
