@@ -1,0 +1,18 @@
+~ start
+神秘宝箱: [[嗨|你好|hello]], 很高兴见到你.
+神秘宝箱:  我是一个平平无奇的宝箱.
+神秘宝箱:  牧场的牛和鸡饿了要投喂吗?
+
+- 投喂
+	提莫: 开始投喂啦
+	do GameDialogueManager.action_give_crop_seeds()
+	do GameDialogueManager.do_close_chest()
+	do GameDialogueManager.run_world()
+	=> END
+- 暂不投喂
+	do GameDialogueManager.do_close_chest()
+ 	提莫: 我还不想投喂,我要种田!
+
+do GameDialogueManager.run_world()
+
+=> END

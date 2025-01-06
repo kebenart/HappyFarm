@@ -2,6 +2,11 @@ extends Node
 
 signal give_crop_seeds
 
+signal close_chest
+
+
+func do_close_chest() -> void:
+	close_chest.emit()
 
 func action_give_crop_seeds() -> void:
 	give_crop_seeds.emit()

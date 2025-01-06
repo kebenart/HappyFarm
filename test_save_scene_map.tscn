@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://phhfna0r2vgb"]
+[gd_scene load_steps=23 format=4 uid="uid://phhfna0r2vgb"]
 
 [ext_resource type="PackedScene" uid="uid://c21um6bm8j5jf" path="res://rain_panel.tscn" id="1_cvlab"]
 [ext_resource type="PackedScene" uid="uid://cresmkx45g5cw" path="res://game_screen.tscn" id="2_1b6dh"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://tay2vge8vwxo" path="res://save_level_data_component.tscn" id="17_1exal"]
 [ext_resource type="PackedScene" uid="uid://bjhyjrjsa23h6" path="res://test_scene_save_data_manager_component.tscn" id="18_i4ody"]
 [ext_resource type="PackedScene" uid="uid://bxjamsg26dpf" path="res://guide.tscn" id="21_k7let"]
+[ext_resource type="PackedScene" uid="uid://68a3pqr7gslt" path="res://chest.tscn" id="22_7a476"]
 
 [node name="test_save_scene_map" type="Node2D"]
 y_sort_enabled = true
@@ -165,3 +166,6 @@ position = Vector2(410, 249)
 [node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("18_i4ody")]
 
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("17_1exal")]
+
+[node name="Chest" parent="." instance=ExtResource("22_7a476")]
+position = Vector2(483, 254)
