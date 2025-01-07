@@ -4,6 +4,10 @@ signal give_crop_seeds
 
 signal close_chest
 
+signal feed_the_animals
+
+func action_feed_the_animals() -> void:
+	feed_the_animals.emit()
 
 func do_close_chest() -> void:
 	close_chest.emit()

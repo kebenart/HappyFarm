@@ -5,8 +5,7 @@
 
 - 投喂
 	提莫: 开始投喂啦
-	do GameDialogueManager.action_give_crop_seeds()
-	do GameDialogueManager.do_close_chest()
+	do GameDialogueManager.action_feed_the_animals()
 	do GameDialogueManager.run_world()
 	=> END
 - 暂不投喂

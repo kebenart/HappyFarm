@@ -16,6 +16,20 @@ var inventory:Dictionary = {
 
 
 func add_inventory(name:String) -> void:
-	if inventory.has(name):
-		inventory[name] = inventory[name]+1
-		inventory_changed.emit(name)
+	inventory.get_or_add(name)
+	
+	if inventory[name] == null:
+		inventory[name] = 1
+	else:
+		inventory[name] += 1
+	
+	inventory_changed.emit(name)
+	
+func remove_inventory(name: String) -> void:
+	if inventory[name] == null:
+		inventory[name] = 0
+	else:
+		if inventory[name] > 0: 
+			inventory[name] -= 1
+	
+	inventory_changed.emit(name)

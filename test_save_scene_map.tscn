@@ -169,3 +169,4 @@ position = Vector2(410, 249)
 
 [node name="Chest" parent="." instance=ExtResource("22_7a476")]
 position = Vector2(483, 254)
+output_reward_scenes = Array[PackedScene]([ExtResource("13_huuih")])

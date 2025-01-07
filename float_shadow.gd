@@ -1,4 +1,5 @@
 # 用于增加浮动阴影效果
+class_name FloatShadow
 extends Node2D
  
 # 浮动最大高度
@@ -14,6 +15,8 @@ extends Node2D
 
 @export var shadow_blur_mount:float = 1
 @export var shadow_blur_mount_speed:float = 2.5
+
+var enable_animals = true
 
 # 是否升高动画
 var need_high:bool = true
@@ -39,6 +42,9 @@ func _init_shadow() -> void:
 	enable_shadow = true
 
 func _process(delta: float) -> void:
+	if !enable_animals:
+		return
+		
 	var tempMaterial
 	if  sprite2D.material:
 		tempMaterial = sprite2D.material as ShaderMaterial

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bds3hxd1nr5fa"]
 
 [ext_resource type="Texture2D" uid="uid://df7xlbr66dbi1" path="res://assets/ui/whate_item.png" id="1_mt17w"]
-[ext_resource type="Material" path="res://float_shadow.tres" id="1_n8csx"]
+[ext_resource type="Material" uid="uid://b4e4xtlascwwy" path="res://float_shadow.tres" id="1_n8csx"]
 [ext_resource type="PackedScene" uid="uid://b331pma2ai3il" path="res://collectable_component.tscn" id="2_w8ub4"]
-[ext_resource type="PackedScene" path="res://float_shadow.tscn" id="4_t4i1k"]
+[ext_resource type="PackedScene" uid="uid://b738gef86gi06" path="res://float_shadow.tscn" id="4_t4i1k"]
 [ext_resource type="PackedScene" uid="uid://dqda2xvhpe1uy" path="res://wheat_pickup_effect.tscn" id="4_wif5c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm3xv"]
